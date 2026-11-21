@@ -33,5 +33,24 @@ public class Main {
             System.out.println(room.code() + " - " + room.name() + " ("
                     + room.wing() + "): " + room.occupants());
         }
+
+        EvacuationGraph graph = EvacuationGraph.load(
+                Path.of("../datos/version-b/pasillos.csv"));
+        System.out.println("Guías de evacuación:");
+        for (Room room : rooms) {
+            EvacuationGuide guide = graph.findGuide(room.code());
+            if (guide == null) {
+                System.out.println(room.code() + ": sin ruta disponible");
+            } else {
+                System.out.print(room.code() + ": ");
+                for (int i = 0; i < guide.path().length; i++) {
+                    if (i > 0) {
+                        System.out.print(" -> ");
+                    }
+                    System.out.print(guide.path()[i]);
+                }
+                System.out.println(" (" + guide.seconds() + " segundos)");
+            }
+        }
     }
 }

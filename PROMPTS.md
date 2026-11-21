@@ -92,3 +92,48 @@ AL TERMINAR
 Ejecuta todas las pruebas (incluidas las de F1) y muéstrame el resultado. Dame un resumen breve de los archivos creados o modificados y de qué requerimientos de F2 quedaron implementados. No propongas mejoras ni pasos adicionales. Espera mi siguiente prompt para el Feature F3.
 
 no realices commits sin mi permiso, por favor.
+
+## Prompt 3
+Herramienta utilizada: Claude Code (extensión de VS Code).
+
+Continuamos con el mismo proyecto. Siguen aplicando todas las reglas y restricciones de los prompts anteriores. Las repito porque son obligatorias:
+
+REGLAS OBLIGATORIAS
+1. No sugieras mejoras, cambios, alternativas ni requerimientos nuevos. Implementa los requerimientos exactamente como están escritos, aunque te parezca que hay una mejor solución o un algoritmo más adecuado. No reemplaces BFS por ningún otro algoritmo. No agregues funcionalidades que no se piden.
+2. Si un requerimiento deja abierto un detalle de implementación, elige la opción más simple que lo cumpla literalmente, explícala en un comentario en el código y no la presentes como sugerencia.
+3. En este prompt implementa ÚNICAMENTE el Feature F3. No modifiques el comportamiento de F1 ni de F2 salvo lo estrictamente necesario para reutilizar sus datos.
+4. Respeta la estructura de carpetas, paquetes y convenciones que ya existen en el repositorio.
+
+RESTRICCIONES DE IMPLEMENTACIÓN (obligatorias)
+- Lenguaje: Java 17 o superior.
+- Debes implementar tus propias estructuras de datos y algoritmos (el grafo y la cola del BFS deben ser propios, construidos con arreglos).
+- Permitido: arreglos (por ejemplo int[] o Sala[]) y String.
+- Prohibido: cualquier colección de java.util (ArrayList, LinkedList, HashMap, HashSet, TreeMap, TreeSet, PriorityQueue, Stack, ArrayDeque, entre otras), así como Arrays.sort, Collections.sort, List.sort y sorted() de Streams.
+- Prohibido: bibliotecas que calculen caminos más cortos o que implementen grafos.
+- Las pruebas unitarias pueden usar además JUnit (ya configurado en el repositorio).
+
+REQUERIMIENTOS DEL FEATURE F3 (tal como fueron presentados; no los modifiques)
+F3. Para la guía de evacuación nos piden un grafo que guíe a los ocupantes por la salida y pasillos por los que puedan salir del edificio en el menor tiempo posible, tomando en cuenta que hay pasillos bloqueados y sus tres salidas. Para este caso usaríamos un grafo BFS con complejidad O(V+E). Este, al funcionar en colas y buscar el camino con menos aristas, sería la opción más eficaz para realizar una ruta de evacuación.
+
+Implementación esperada según los requerimientos:
+- Construye el grafo con los datos de los CSV de datos/.
+- Los pasillos bloqueados no se agregan al grafo (o se ignoran al recorrerlo).
+- Para cada sala, usa BFS con una cola propia para encontrar el camino con menos aristas hacia cualquiera de las tres salidas.
+- La guía de cada sala indica la salida a usar, la secuencia de pasillos a seguir y la suma de los segundos de los pasillos de esa ruta.
+
+METODOLOGÍA: TDD
+Desarrolla con TDD: primero escribe las pruebas JUnit, verifica que fallen, luego implementa el código mínimo para que pasen y finalmente refactoriza. Las pruebas deben verificar el comportamiento de BFS tal como está descrito (camino con menos aristas), calculando los valores esperados a partir de los CSV de datos/. Incluye como mínimo:
+- Pruebas que comparen valores exactos esperados (assertEquals con la salida, la ruta y los segundos concretos de al menos una sala).
+- Casos límite: una sala conectada directamente a una salida, origen igual a una salida, una sala sin ninguna ruta disponible porque todos sus caminos están bloqueados, y empates en cantidad de aristas.
+- Entradas inválidas: sala inexistente, dato mal formado en el CSV (por ejemplo, segundos no numéricos o estado desconocido), verificando el error o el resultado esperado.
+- Una prueba que verifique que ninguna ruta pasa por un pasillo bloqueado.
+Las pruebas no deben limitarse a verificar verdadero/falso.
+
+EJECUCIÓN
+Agrega al programa principal la ejecución de F3 con los datos de datos/, mostrando la guía de evacuación para todas las salas.
+
+REGISTRO DE PROMPTS
+Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 3", indicando la herramienta utilizada (Claude Code, extensión de VS Code). Verifica que todos los prompts anteriores y las respuestas intermedias que te haya enviado estén registrados en orden.
+
+AL TERMINAR
+Ejecuta todas las pruebas (F1, F2 y F3) y muéstrame el resultado. Dame un resumen breve de los archivos creados o modificados y de qué requerimientos de F3 quedaron implementados. No propongas mejoras ni pasos adicionales. Espera mi siguiente prompt para el README.

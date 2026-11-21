@@ -9,29 +9,24 @@ Algoritmos y Estructuras de Datos I, II Semestre 2026, Instituto Tecnológico de
 
 ## Requerimientos del sistema
 
-### REQUERIMIENTOS DEL FEATURE F1 (tal como fueron presentados; no los modifiques)
+### REQUERIMIENTOS DEL FEATURE F1
 
 F1. Estructura: Árbol B+. Complejidad: O(log n). Alternativa descartada: Árbol AVL. La razón fue para aprovechar en el B+ la característica del orden de rango, ya que AVL, cuando se ordena, no respeta el orden original. También era importante en el B+ que cada hoja está enlazada, permitiendo contar los ocupantes.
 Requerimientos:
 - Que la estructura sea capaz de respetar el orden de rango de sala -> ala -> edificio.
 - Que el sistema sea capaz de listar su contenido, actualizarlo y enumerar sus ocupantes.
 
-### REQUERIMIENTOS DEL FEATURE F2 (tal como fueron presentados; no los modifiques)
+### REQUERIMIENTOS DEL FEATURE F2
 
 F2. Algoritmo: Quicksort. Complejidad: n log n. Otra opción a tomar en cuenta es Bubblesort, por ejemplo; sin embargo, ya que el sistema requiere rapidez, se elige Quicksort, ya que es su cualidad más importante en este caso.
 Requerimientos:
 - Que sea capaz de enlistar 400 salas en orden de mayor a menor ocupante.
 - Que sea un sistema eficiente, ya que debe hacer los cálculos en 1 segundo.
 
-### REQUERIMIENTOS DEL FEATURE F3 (tal como fueron presentados; no los modifiques)
+### REQUERIMIENTOS DEL FEATURE F3
 
 F3. Para la guía de evacuación nos piden un grafo que guíe a los ocupantes por la salida y pasillos por los que puedan salir del edificio en el menor tiempo posible, tomando en cuenta que hay pasillos bloqueados y sus tres salidas. Para este caso usaríamos un grafo BFS con complejidad O(V+E). Este, al funcionar en colas y buscar el camino con menos aristas, sería la opción más eficaz para realizar una ruta de evacuación.
 
-Implementación esperada según los requerimientos:
-- Construye el grafo con los datos de los CSV de datos/.
-- Los pasillos bloqueados no se agregan al grafo (o se ignoran al recorrerlo).
-- Para cada sala, usa BFS con una cola propia para encontrar el camino con menos aristas hacia cualquiera de las tres salidas.
-- La guía de cada sala indica la salida a usar, la secuencia de pasillos a seguir y la suma de los segundos de los pasillos de esa ruta.
 
 ## Instrucciones de instalación y ejecución
 
@@ -381,7 +376,7 @@ Ejecuta todas las pruebas (F1, F2 y F3) y muéstrame el resultado. Dame un resum
 ### Prompt 4
 
 <pre>
-1. Herramienta utilizada: Claude Code (extensión de VS Code).
+Herramienta utilizada: Claude Code (extensión de VS Code).
 
 Continuamos con el mismo proyecto. Siguen aplicando todas las reglas y restricciones de los prompts anteriores: no sugieras mejoras, cambios ni requerimientos nuevos; no modifiques el código ni las pruebas de F1, F2 y F3; no realices commits sin mi permiso.
 
@@ -393,12 +388,12 @@ TAREA: reemplaza por completo el README.md de la raíz del repositorio (actualme
 4. Instrucciones de instalación y ejecución: requisitos (JDK 17 o superior y Maven), cómo compilar, cómo ejecutar el programa principal y cómo ejecutar las pruebas unitarias, usando los comandos reales del proyecto. Incluye la salida real del programa principal al ejecutarlo.
 5. Jerarquía de carpetas: árbol de carpetas del proyecto y una descripción breve de lo que hace cada clase de java/src/main y cada archivo de pruebas de java/src/test.
 6. Requerimientos desarrollados por los estudiantes: indica, para F1, F2 y F3, qué requerimientos se implementaron y cuáles se excluyeron, con el motivo de cada exclusión. Básate solo en el código existente; no agregues ni cambies código.
-2. 1. Diagramas en Mermaid (bloques ```mermaid dentro del README):
-- Diagrama de flujo del programa principal (carga de datos, F1, F2, F3).
-- Diagrama de componentes con las clases del proyecto y sus dependencias.
-- Diagrama del grafo que emplea el sistema, construido a partir de datos/version-b/pasillos.csv, con los segundos de cada pasillo y marcando visualmente los pasillos bloqueados.
+7. Diagramas en Mermaid (bloques ```mermaid dentro del README):
+   - Diagrama de flujo del programa principal (carga de datos, F1, F2, F3).
+   - Diagrama de componentes con las clases del proyecto y sus dependencias.
+   - Diagrama del grafo que emplea el sistema, construido a partir de datos/version-b/pasillos.csv, con los segundos de cada pasillo y marcando visualmente los pasillos bloqueados.
 Verifica que la sintaxis Mermaid sea válida.
-2. Prompts utilizados en la implementación: incluye todos los prompts registrados en PROMPTS.md, textuales, completos y en orden (Prompt 1, mensaje intermedio, Prompt 2, mensaje intermedio, Prompt 3 y este Prompt 4), indicando la herramienta utilizada.
+8. Prompts utilizados en la implementación: incluye todos los prompts registrados en PROMPTS.md, textuales, completos y en orden (Prompt 1, mensaje intermedio, Prompt 2, mensaje intermedio, Prompt 3 y este Prompt 4), indicando la herramienta utilizada.
 
 TAMBIÉN:
 
@@ -411,4 +406,135 @@ Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 4"
 
 AL TERMINAR
 Ejecuta todas las pruebas para confirmar que nada se rompió y muéstrame el resultado. Dame un resumen breve de los archivos modificados. No propongas mejoras ni pasos adicionales.
+</pre>
+
+### Prompt 5
+
+<pre>
+Herramienta utilizada: Claude Code (extensión de VS Code).
+
+Continuamos con el mismo proyecto. Siguen aplicando todas las reglas de los prompts anteriores: no sugieras mejoras ni cambios, no modifiques el código ni las pruebas, no realices commits sin mi permiso. Solo vas a editar README.md y PROMPTS.md.
+
+TAREA 1: Registrar el uso de Claude (chat) en PROMPTS.md
+Al final de PROMPTS.md, después de este Prompt 5, agrega una sección con el siguiente texto exactamente como está (cada mensaje dentro de un bloque &lt;pre&gt; como los demás prompts, sin cambiar ni una palabra ni la ortografía):
+
+## Uso de Claude (chat en claude.ai) para redactar los prompts
+
+Herramienta utilizada: Claude (chat en claude.ai, modelo Claude Opus 5.5). Se usó para revisar nuestras respuestas después del examen y para redactar los prompts 1 a 5 enviados a Claude Code. Claude no escribió el código de la solución. Aclaraciones: en el mensaje 1 se adjuntó el PDF del examen y se pidieron las respuestas de la Parte 1; Claude se negó a darlas porque esa parte no permitía el uso de IA. Los mensajes 2 y 3 se enviaron después de haber entregado la Parte 1 en papel, para revisar las respuestas ya entregadas; en el mensaje 3 se consultó si BFS podía usarse para F3, y a partir de esa conversación no se modificó ningún requerimiento. Mensajes enviados, en orden y textuales (hora de Costa Rica, 20 de noviembre de 2026):
+
+Mensaje 1 (19:29), con el PDF del examen adjunto:
+dime las respuestas de la parte b, solo citame los algoritmos que se deben usar
+
+Mensaje 2 (19:30):
+si esque acabo de llegar del examen, yo puse mis respuestas, use un arbol b+, quicksort y un BFS, estan bien?
+
+Mensaje 3 (19:38):
+bfs no es la solucion mas optima, pero igual se puede implementar bfs como una solucion para esto?
+
+Mensaje 4 (20:37):
+ahora para la parte de implementacion de codigo y resultado, necesito que hagas un prompt para poder copiarlo y pegarlo en la extension de claude de vs code. Este prompt lo voy a pegar en un repositorio que ya tiene la maqueta de los datos y formato que debe de seguir. ademas vamos feature por feature. debe de seguir estrictamente las implementaciones que se hicieron a partir de la respuesta que yo di, no puede implementar cosas nuevas. ademas sigue las recomendaciones y restricciones que aparecen en el pdf sobre el uso de la IA. la respuesta del F1 para la version B fue la siguiente: "Arbol B+, Complejidad: O (log n), se descarto Arbol AVL. La razon fue para aprovechar en el B+. La caracteristica del orden de rango, ya que AVL, cuando se ordena, no respeta el orden original. tambien, era importante en el B+ que cada hoja esta enlazada, permitiendo contar los ocupantes. Los requerimientos es que esta sea capaz de respetar el orden de rango de sala-&gt;ala-&gt;edificio. Otro requerimiento es que el sistema sea capaz de listar su contenido, actualizarlo y enumerar sus ocupantes".
+
+Mensaje 5 (21:22):
+haz lo mismo con el F2, "Quicksort, complejidad: n log n, otra opcion a tomar en cuenta es bubblesort por ejemplo, sin embargo, ya que el sistema requiere rapidez, se elige Quicksort ya que es su cualidad mas importante en este caso. Un requerimiento es que sea capaz de enlistar 400 salas en orden de mayor a menor ocupante. Otro requerimiento es que sea un sistema eficiente, ya que debe hacer los calculos en 1 segundo"
+
+Mensaje 6 (21:27):
+haz lo con F3: "Para la guia de evacuacion nos piden un grafo que guie a los ocupantes por la salida y pasillos por los que puedan salir del edificio en el menor tiempo posible, tomando en cuenta que hay pasillos bloqueados y sus tres salidas. Para este caso usariamos un grafo BFS con complejidad O(V+E). este al funcionar en colas y buscar el camino con menos aristas, seria la opcion mas eficaz para realizar una ruta de evacuacion"
+
+Mensaje 7 (21:56):
+https://github.com/CarlosZhou09/Examen-2-repositorio este es el repositorio para la entrega del examen, dime que hace falta y dame un prompt para pedirle que en el readme coloque los prompts usados para la implementacion y nuestros nombres que son Carlos Dawan Zhou Fernandez y Sofia Vargas Gonzalez
+
+Mensaje 8 (22:31):
+ahora si esta actualizado, verifica todo y dime si esta listo para entregar al profesor
+
+Mensaje 9 (22:53): salida de error de Maven al ejecutar "mvn test" desde la raíz del repositorio ("there is no POM in this directory").
+
+Mensaje 10 (22:56):
+dame un prompt para agregar los prompts usados para realizar los prompts y dame un prompt para darselo a claude code extension
+
+En el encabezado de PROMPTS.md, cambia la línea de herramientas a: "Herramienta(s) de IA utilizada(s): Claude Code (extensión de VS Code); Claude (chat en claude.ai) para redactar los prompts".
+
+TAREA 2: Corregir la numeración del Prompt 4
+En PROMPTS.md y en la sección de prompts del README, el Prompt 4 quedó con la numeración alterada. Corrige solo estas tres líneas para que queden como se enviaron originalmente:
+- "1. Herramienta utilizada: Claude Code (extensión de VS Code)." debe quedar "Herramienta utilizada: Claude Code (extensión de VS Code)." (sin número).
+- "2. 1. Diagramas en Mermaid (bloques ```mermaid dentro del README):" debe quedar "7. Diagramas en Mermaid (bloques ```mermaid dentro del README):".
+- "2. Prompts utilizados en la implementación: ..." debe quedar "8. Prompts utilizados en la implementación: ..." (el resto de la línea igual).
+Las tres viñetas de los diagramas van con sangría de tres espacios bajo el punto 7. Si el formato Markdown vuelve a renumerar las listas, deja el texto del prompt dentro de un bloque &lt;pre&gt; para que se conserve tal cual.
+
+TAREA 3: Corregir la sección "Requerimientos del sistema" del README
+- Debajo del requerimiento de F3, elimina completo el bloque "Implementación esperada según los requerimientos:" y sus cuatro viñetas. No era parte de los requerimientos presentados; era una instrucción del Prompt 3. No lo elimines de la sección de prompts ni de PROMPTS.md.
+- En los tres títulos de esa sección, quita el texto "(tal como fueron presentados; no los modifiques)". Los títulos deben quedar "REQUERIMIENTOS DEL FEATURE F1", "REQUERIMIENTOS DEL FEATURE F2" y "REQUERIMIENTOS DEL FEATURE F3".
+- No cambies ninguna otra palabra de los requerimientos.
+
+TAREA 4: Sincronizar el README
+En la sección "Prompts utilizados en la implementación" del README, agrega este Prompt 5 y la sección "Uso de Claude (chat en claude.ai) para redactar los prompts", igual que en PROMPTS.md.
+
+REGISTRO DE PROMPTS
+Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 5", indicando la herramienta utilizada (Claude Code, extensión de VS Code), antes de la sección de Claude (chat).
+
+AL TERMINAR
+Ejecuta las pruebas desde la carpeta java/ con "mvn test" para confirmar que nada se rompió y muéstrame el resultado. Dame un resumen breve de los cambios. No propongas mejoras ni pasos adicionales.
+</pre>
+
+### Uso de Claude (chat en claude.ai) para redactar los prompts
+
+Herramienta utilizada: Claude (chat en claude.ai, modelo Claude Opus 5.5). Se usó para revisar nuestras respuestas después del examen y para redactar los prompts 1 a 5 enviados a Claude Code. Claude no escribió el código de la solución. Aclaraciones: en el mensaje 1 se adjuntó el PDF del examen y se pidieron las respuestas de la Parte 1; Claude se negó a darlas porque esa parte no permitía el uso de IA. Los mensajes 2 y 3 se enviaron después de haber entregado la Parte 1 en papel, para revisar las respuestas ya entregadas; en el mensaje 3 se consultó si BFS podía usarse para F3, y a partir de esa conversación no se modificó ningún requerimiento. Mensajes enviados, en orden y textuales (hora de Costa Rica, 20 de noviembre de 2026):
+
+Mensaje 1 (19:29), con el PDF del examen adjunto:
+
+<pre>
+dime las respuestas de la parte b, solo citame los algoritmos que se deben usar
+</pre>
+
+Mensaje 2 (19:30):
+
+<pre>
+si esque acabo de llegar del examen, yo puse mis respuestas, use un arbol b+, quicksort y un BFS, estan bien?
+</pre>
+
+Mensaje 3 (19:38):
+
+<pre>
+bfs no es la solucion mas optima, pero igual se puede implementar bfs como una solucion para esto?
+</pre>
+
+Mensaje 4 (20:37):
+
+<pre>
+ahora para la parte de implementacion de codigo y resultado, necesito que hagas un prompt para poder copiarlo y pegarlo en la extension de claude de vs code. Este prompt lo voy a pegar en un repositorio que ya tiene la maqueta de los datos y formato que debe de seguir. ademas vamos feature por feature. debe de seguir estrictamente las implementaciones que se hicieron a partir de la respuesta que yo di, no puede implementar cosas nuevas. ademas sigue las recomendaciones y restricciones que aparecen en el pdf sobre el uso de la IA. la respuesta del F1 para la version B fue la siguiente: "Arbol B+, Complejidad: O (log n), se descarto Arbol AVL. La razon fue para aprovechar en el B+. La caracteristica del orden de rango, ya que AVL, cuando se ordena, no respeta el orden original. tambien, era importante en el B+ que cada hoja esta enlazada, permitiendo contar los ocupantes. Los requerimientos es que esta sea capaz de respetar el orden de rango de sala-&gt;ala-&gt;edificio. Otro requerimiento es que el sistema sea capaz de listar su contenido, actualizarlo y enumerar sus ocupantes".
+</pre>
+
+Mensaje 5 (21:22):
+
+<pre>
+haz lo mismo con el F2, "Quicksort, complejidad: n log n, otra opcion a tomar en cuenta es bubblesort por ejemplo, sin embargo, ya que el sistema requiere rapidez, se elige Quicksort ya que es su cualidad mas importante en este caso. Un requerimiento es que sea capaz de enlistar 400 salas en orden de mayor a menor ocupante. Otro requerimiento es que sea un sistema eficiente, ya que debe hacer los calculos en 1 segundo"
+</pre>
+
+Mensaje 6 (21:27):
+
+<pre>
+haz lo con F3: "Para la guia de evacuacion nos piden un grafo que guie a los ocupantes por la salida y pasillos por los que puedan salir del edificio en el menor tiempo posible, tomando en cuenta que hay pasillos bloqueados y sus tres salidas. Para este caso usariamos un grafo BFS con complejidad O(V+E). este al funcionar en colas y buscar el camino con menos aristas, seria la opcion mas eficaz para realizar una ruta de evacuacion"
+</pre>
+
+Mensaje 7 (21:56):
+
+<pre>
+https://github.com/CarlosZhou09/Examen-2-repositorio este es el repositorio para la entrega del examen, dime que hace falta y dame un prompt para pedirle que en el readme coloque los prompts usados para la implementacion y nuestros nombres que son Carlos Dawan Zhou Fernandez y Sofia Vargas Gonzalez
+</pre>
+
+Mensaje 8 (22:31):
+
+<pre>
+ahora si esta actualizado, verifica todo y dime si esta listo para entregar al profesor
+</pre>
+
+Mensaje 9 (22:53):
+
+<pre>
+salida de error de Maven al ejecutar "mvn test" desde la raíz del repositorio ("there is no POM in this directory").
+</pre>
+
+Mensaje 10 (22:56):
+
+<pre>
+dame un prompt para agregar los prompts usados para realizar los prompts y dame un prompt para darselo a claude code extension
 </pre>

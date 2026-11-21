@@ -1,7 +1,7 @@
 # Registro de prompts
 
-- Integrantes:
-- Herramienta(s) de IA utilizada(s):
+- Integrantes: Carlos Dawan Zhou Fernández, Sofía Vargas González
+- Herramienta(s) de IA utilizada(s): Claude Code (extensión de VS Code)
 
 ## Prompt 1
 Herramienta utilizada: Claude Code (extensión de VS Code).
@@ -91,6 +91,7 @@ Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 2"
 AL TERMINAR
 Ejecuta todas las pruebas (incluidas las de F1) y muéstrame el resultado. Dame un resumen breve de los archivos creados o modificados y de qué requerimientos de F2 quedaron implementados. No propongas mejoras ni pasos adicionales. Espera mi siguiente prompt para el Feature F3.
 
+## Mensaje intermedio después del Prompt 2
 no realices commits sin mi permiso, por favor.
 
 ## Prompt 3
@@ -137,3 +138,35 @@ Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 3"
 
 AL TERMINAR
 Ejecuta todas las pruebas (F1, F2 y F3) y muéstrame el resultado. Dame un resumen breve de los archivos creados o modificados y de qué requerimientos de F3 quedaron implementados. No propongas mejoras ni pasos adicionales. Espera mi siguiente prompt para el README.
+
+## Prompt 4
+1. Herramienta utilizada: Claude Code (extensión de VS Code).
+
+Continuamos con el mismo proyecto. Siguen aplicando todas las reglas y restricciones de los prompts anteriores: no sugieras mejoras, cambios ni requerimientos nuevos; no modifiques el código ni las pruebas de F1, F2 y F3; no realices commits sin mi permiso.
+
+TAREA: reemplaza por completo el README.md de la raíz del repositorio (actualmente es el del repositorio base) por el README de nuestra solución, con estas secciones en este orden:
+
+1. Nombre del examen-proyecto: "Examen 2 – SalidaSegura" (Algoritmos y Estructuras de Datos I, II Semestre 2026, Instituto Tecnológico de Costa Rica).
+2. Autores: Carlos Dawan Zhou Fernández y Sofía Vargas González.
+3. Requerimientos del sistema: copia textualmente, sin modificar ni una palabra, los bloques "REQUERIMIENTOS DEL FEATURE F1", "REQUERIMIENTOS DEL FEATURE F2" y "REQUERIMIENTOS DEL FEATURE F3" tal como aparecen en PROMPTS.md. No los resumas, no los reordenes, no los numeres de otra forma y no agregues requerimientos.
+4. Instrucciones de instalación y ejecución: requisitos (JDK 17 o superior y Maven), cómo compilar, cómo ejecutar el programa principal y cómo ejecutar las pruebas unitarias, usando los comandos reales del proyecto. Incluye la salida real del programa principal al ejecutarlo.
+5. Jerarquía de carpetas: árbol de carpetas del proyecto y una descripción breve de lo que hace cada clase de java/src/main y cada archivo de pruebas de java/src/test.
+6. Requerimientos desarrollados por los estudiantes: indica, para F1, F2 y F3, qué requerimientos se implementaron y cuáles se excluyeron, con el motivo de cada exclusión. Básate solo en el código existente; no agregues ni cambies código.
+2. 1. Diagramas en Mermaid (bloques ```mermaid dentro del README):
+- Diagrama de flujo del programa principal (carga de datos, F1, F2, F3).
+- Diagrama de componentes con las clases del proyecto y sus dependencias.
+- Diagrama del grafo que emplea el sistema, construido a partir de datos/version-b/pasillos.csv, con los segundos de cada pasillo y marcando visualmente los pasillos bloqueados.
+Verifica que la sintaxis Mermaid sea válida.
+2. Prompts utilizados en la implementación: incluye todos los prompts registrados en PROMPTS.md, textuales, completos y en orden (Prompt 1, mensaje intermedio, Prompt 2, mensaje intermedio, Prompt 3 y este Prompt 4), indicando la herramienta utilizada.
+
+TAMBIÉN:
+
+- En PROMPTS.md, completa el encabezado: "Integrantes: Carlos Dawan Zhou Fernández, Sofía Vargas González" y "Herramienta(s) de IA utilizada(s): Claude Code (extensión de VS Code)".
+- En PROMPTS.md, el mensaje "no realices commits sin mi permiso, por favor." quedó pegado al final del Prompt 2; sepáralo bajo su propio encabezado "## Mensaje intermedio después del Prompt 2", sin cambiar su texto.
+- Elimina la carpeta csharp/, ya que la solución se hizo en Java, tal como indica el README del repositorio base.
+
+REGISTRO DE PROMPTS
+Agrega este prompt completo, textual y sin resumir, a PROMPTS.md como "Prompt 4", indicando la herramienta utilizada (Claude Code, extensión de VS Code).
+
+AL TERMINAR
+Ejecuta todas las pruebas para confirmar que nada se rompió y muéstrame el resultado. Dame un resumen breve de los archivos modificados. No propongas mejoras ni pasos adicionales.

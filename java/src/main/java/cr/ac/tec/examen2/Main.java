@@ -26,5 +26,12 @@ public class Main {
             }
         }
         System.out.println("Personas en todo el edificio: " + tree.countBuildingOccupants());
+
+        RoomQuickSort.sortByOccupantsDescending(rooms);
+        System.out.println("Salas de mayor a menor ocupantes:");
+        for (Room room : rooms) {
+            System.out.println(room.code() + " - " + room.name() + " ("
+                    + room.wing() + "): " + room.occupants());
+        }
     }
 }
